@@ -7,8 +7,8 @@ Build
 ===================
 Build & install into `$GOPATH/bin`:
 ```
-go get -u github.com/dolmen/json2yaml
-go install github.com/dolmen/json2yaml
+go get -u github.com/dolmen/yaml2json
+go install github.com/dolmen/yaml2json
 ```
 
 Usage
@@ -16,7 +16,7 @@ Usage
 ### shell
 * run `echo "a: 1" | ./yaml2json` to see result
 
-### read from file save to file
+### read from file, save to file
 ```
 yaml2json < in.json > out.json
 ```

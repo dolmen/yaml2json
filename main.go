@@ -1,3 +1,7 @@
+// Command yaml2json allows to convert YAML on STDIN to JSON on STDOUT.
+//
+// Install
+//    go install github.com/dolmen/yaml2json
 package main
 
 import (

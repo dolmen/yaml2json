@@ -10,7 +10,6 @@ import (
 	"io"
 	"io/ioutil"
 	"os"
-	"strconv"
 
 	goyaml "gopkg.in/yaml.v2"
 )
@@ -57,16 +56,11 @@ func transformData(pIn *interface{}) (err error) {
 			if err = transformData(&v); err != nil {
 				return err
 			}
-			var sk string
-			switch k.(type) {
-			case string:
-				sk = k.(string)
-			case int:
-				sk = strconv.Itoa(k.(int))
-			default:
-				return fmt.Errorf("type mismatch: expect map key string or int; got: %T", k)
+			ks, isString := k.(string)
+			if !isString {
+				ks = fmt.Sprint(k)
 			}
-			m[sk] = v
+			m[ks] = v
 		}
 		*pIn = m
 	case []interface{}:

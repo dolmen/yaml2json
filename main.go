@@ -9,7 +9,6 @@ import (
 	"encoding/json"
 	"fmt"
 	"io"
-	"io/ioutil"
 	"os"
 
 	goyaml "gopkg.in/yaml.v2"
@@ -25,7 +24,7 @@ func main() {
 }
 
 func translate(in io.Reader, out io.Writer) error {
-	input, err := ioutil.ReadAll(in)
+	input, err := io.ReadAll(in)
 	if err != nil {
 		return err
 	}

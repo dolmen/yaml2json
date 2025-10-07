@@ -11,7 +11,7 @@ import (
 	"io"
 	"os"
 
-	goyaml "gopkg.in/yaml.v2"
+	goyaml "go.yaml.in/yaml/v3"
 )
 
 func main() {
